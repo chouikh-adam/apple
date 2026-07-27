@@ -82,6 +82,9 @@ main{flex:1}
 .code-phone-copy:hover{background:var(--primary);color:white}
 .code-phone-copy:active{transform:scale(0.98)}
 .code-phone-copy.copied{background:var(--success);color:white}
+.code-phone-call{cursor:pointer;color:white;font-size:13px;font-weight:600;padding:8px 16px;border-radius:var(--radius-sm);background:var(--success);transition:var(--transition);display:flex;align-items:center;gap:6px;text-decoration:none;user-select:none}
+.code-phone-call:hover{background:#2db84d;transform:scale(1.02)}
+.code-phone-call:active{transform:scale(0.98)}
 .code-phone-info{text-align:right;font-size:13px;color:var(--text-tertiary);line-height:1.5}
 .code-left{display:flex;flex-direction:column;gap:0}
 .code-right{display:flex;flex-direction:column;gap:0}

